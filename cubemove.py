@@ -52,7 +52,7 @@ def circlularMove(r=10, y = 10, size=2, speed=10, blockTypeId=41, blockData=0):
 #    rectangleMove(x0=10, z0=10, x1=-10, z1=-10, y=10, size=2, speed=40, blockTypeId=41)
 
 for i in range(2):
-    rectangleMove(x0=10, z0=10, x1=-10, z1=-10, y=10, size=3, speed=30, blockTypeId=41)
+    rectangleMove(x0=10, z0=10, x1=-10, z1=-10, y=10, size=5, speed=30, blockTypeId=41)
 
 for i in range(5):
-    circlularMove(r=16, y = 10, size=3, speed=50, blockTypeId=41, blockData=0)
+    circlularMove(r=12, y = 10, size=5, speed=50, blockTypeId=41, blockData=0)
