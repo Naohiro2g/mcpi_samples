@@ -114,12 +114,12 @@ class Buffer():
 	Double-buffer a voxel message for Minecraft.
 	To improve performance, only changes are rendered.
 	"""
-	anchor_position = minecraft.Vec3(0,0,0)
+
 	last_message = ''
 	offscreen = []
 	onscreen = []
 
-	def __init__(self, anchor_position):
+	def __init__(self, anchor_position=minecraft.Vec3(0, 8, 0)):
 		"""
 		Set everything up to render messages into the world
 		at the given position.
@@ -193,11 +193,9 @@ class Buffer():
 
 mc = minecraft.Minecraft.create() # Connect to Minecraft.
 
-#place = mc.player.getPos() # Start near the player.
-#place.y += 9 # Above the player's ground level.
-
-x, y, z = 50 * 0, 20 * 1, -20
-bitmapper = Buffer(minecraft.Vec3(x, y, z))
+x, y, z = 50 * 0, 10 * 2, -5
+print("anchor point(left-bottom of the clock frame):", x, y, z)
+bitmapper = Buffer(anchor_position=minecraft.Vec3(x, y + 8, z))
 bitmapper.clear(mc)
 
 while True:
