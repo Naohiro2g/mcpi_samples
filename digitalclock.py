@@ -149,7 +149,7 @@ class Buffer():
 						else:
 							self.offscreen[line_offset].append(block.AIR)
 						dot_offset += 1
-					for blank in range(dot_offset, 6):
+					for _blank in range(dot_offset, 6):
 						# Expand short lines to the full width of 6 voxels.
 						self.offscreen[line_offset].append(block.AIR)
 					line_offset += 1
