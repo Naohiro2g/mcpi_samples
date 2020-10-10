@@ -12,7 +12,7 @@ mc = Minecraft.create()
 mc.postToChat("xyz-axis")
 
 
-def drawXYZaxis0(wait=0.5, clear=False, mc=mc):
+def draw_XYZ_axis0(mc=mc, wait=0.5, clear=False):
     blockTypeIdX = 1
     blockTypeIdY = 2
     blockTypeIdZ = 41
@@ -49,7 +49,7 @@ def drawXYZaxis0(wait=0.5, clear=False, mc=mc):
     mc.setBlocks(  0,  -1, -20,    0,  -1,  20,  blockTypeId)
     mc.setBlocks( -1,  -1,  19,    1,  -1,  19,  blockTypeId)
 
-def drawXYZaxis(wait=0.1, mc=mc):
+def draw_XYZ_axis(mc=mc, wait=0.1):
     # x-axis
     blockTypeId, blockData = 1, 0
     x, y, z = -20, 20, 0
@@ -86,15 +86,15 @@ def drawXYZaxis(wait=0.1, mc=mc):
             z += 1
             sleep(wait)
 
-def resetMinecraftWorld(mc=mc):
+def reset_Minecraft_World(mc=mc):
     mc.setBlocks(-100, 0, -100,   100, 60, 100,    0)
     mc.setBlocks(-100,-1, -100,   100, -1, 100,    2)
 
-#resetMinecraftWorld()
+#reset_Minecraft_World()
 
-#drawXYZaxis0(clear=True)
+#draw_XYZ_axis0(clear=True)
 #sleep(1)
-#drawXYZaxis0(clear=False)
+#draw_XYZ_axis0(clear=False)
 #sleep(10)
-#drawXYZaxis0(clear=True)
-drawXYZaxis0()
+#draw_XYZ_axis0(clear=True)
+draw_XYZ_axis0()
