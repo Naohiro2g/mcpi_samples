@@ -3,9 +3,10 @@ from mcpi.vec3 import Vec3
 from time import sleep
 
 
-#mc = Minecraft.create("primbell002.local")
+# mc = Minecraft.create("primbell002.local")
 mc = Minecraft.create()
 mc.postToChat("Crane - UFO catcher")
+
 
 class Crane():
     def __init__(self, cranePos):
@@ -17,14 +18,14 @@ class Crane():
         Crane.draw(self, clear=True)
 
     def openCraw(self, pose=0.5):
-        if self.isOpen == False:
+        if not self.isOpen:
             Crane.draw(self, clear=True)
             self.isOpen = True
             Crane.draw(self, clear=False)
         sleep(pose)
 
     def closeCraw(self, pose=0.5):
-        if self.isOpen == True:
+        if self.isOpen:
             Crane.draw(self, clear=True)
             self.isOpen = False
             Crane.draw(self, clear=False)
@@ -37,8 +38,8 @@ class Crane():
         # bar y=1..21
         mc.setBlocks(x, y + 1, z,  x, y + 21, z,   blockTypeId, blockData)
         # cross y=0
-        mc.setBlocks(x + 3, y, z,  x - 3 , y, z,   blockTypeId, blockData)
-        mc.setBlocks(x, y, z + 3,  x, y, z - 3,    blockTypeId, blockData)
+        mc.setBlocks(x + 3, y, z,      x - 3, y, z,        blockTypeId, blockData)
+        mc.setBlocks(x,     y, z + 3,  x,     y, z - 3,    blockTypeId, blockData)
 
         # virtical upper  y=-1..-3
         mc.setBlocks(x + 3, y - 1, z,  x + 3, y - 3, z,   blockTypeId, blockData)
@@ -56,11 +57,10 @@ class Crane():
             mc.setBlocks(x, y - 4, z - 3,  x, y - 6, z - 3,   blockTypeId, blockData)
         else:
             # Crane  y=-4
-            mc.setBlocks(x + 3, y - 4, z,  x + 1, y - 4, z,   blockTypeId, blockData)
-            mc.setBlocks(x - 3, y - 4, z,  x - 1, y - 4, z,   blockTypeId, blockData)
-            mc.setBlocks(x, y - 4, z + 3,  x, y - 4, z + 1,   blockTypeId, blockData)
-            mc.setBlocks(x, y - 4, z - 3,  x, y - 4, z - 1,   blockTypeId, blockData)
-
+            mc.setBlocks(x + 3, y - 4, z,     x + 1, y - 4, z,     blockTypeId, blockData)
+            mc.setBlocks(x - 3, y - 4, z,     x - 1, y - 4, z,     blockTypeId, blockData)
+            mc.setBlocks(x,     y - 4, z + 3, x,     y - 4, z + 1, blockTypeId, blockData)
+            mc.setBlocks(x,     y - 4, z - 3, x,     y - 4, z - 1, blockTypeId, blockData)
 
     def move(self, dX=None, dY=None, dZ=None, speed=1, pose=0.5):
         step = 1
@@ -94,7 +94,7 @@ class Crane():
 
 # main
 
-#mc.setBlocks(-50, 0, -50,   50, 40, 50,  0)
+# mc.setBlocks(-50, 0, -50,   50, 40, 50,  0)
 
 cranePos = Vec3(-10, 25, 5)
 crane1 = Crane(cranePos)

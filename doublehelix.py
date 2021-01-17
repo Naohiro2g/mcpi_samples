@@ -18,7 +18,8 @@ def double_helix(x=0, z=0, y=0, r=5, turns=2, speed=1):
         a += (360 / r) / resolution
         y += (0.5 * (r + 3)) / resolution
 
-#x,z=50,50
-#mc.setBlocks(x + 10, 0, z + 10, x - 10, 63, z - 10,  0)
+# x,z=50,50
+# mc.setBlocks(x + 10, 0, z + 10, x - 10, 63, z - 10,  0)
+
 
 double_helix(x=50, z=50, y=0, r=5, turns=2, speed=1)

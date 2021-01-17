@@ -15,24 +15,24 @@ Z_BASE = 5
 X_SIZE = 6
 
 # 7セグの配置
-# 各ブロック、左下原点*(0,0)からのオフセット(x,y)   
+# 各ブロック、左下原点*(0,0)からのオフセット(x,y)
 # y:
-# 6     A A       A0(1,6)  A1(2.6)
-# 5   F     B     F1(0,5)  B1(3,5)
-# 4   F     B     F0(0,4)  B0(3,4)
-# 3     G G       G0(1,3)  G1(2,3) 
-# 2   E     C     E1(0,2)  C1(3,2)
-# 1   E     C     E0(0,1)  C0(3,1) 
-# 0   * D D       D0(1,0)  D1(2,0)
+# 6     A A       A0(1, 6)  A1(2, 6)
+# 5   F     B     F1(0, 5)  B1(3, 5)
+# 4   F     B     F0(0, 4)  B0(3, 4)
+# 3     G G       G0(1, 3)  G1(2, 3)
+# 2   E     C     E1(0, 2)  C1(3, 2)
+# 1   E     C     E0(0, 1)  C0(3, 1)
+# 0   * D D       D0(1, 0)  D1(2, 0)
 # x:  0 1 2 3
 
-offset_A = ((1,6), (2,6))
-offset_B = ((3,4), (3,5))
-offset_C = ((3,1), (3,2))
-offset_D = ((1,0), (2,0))
-offset_E = ((0,1), (0,2))
-offset_F = ((0,4), (0,5))
-offset_G = ((1,3), (2,3))
+offset_A = ((1, 6), (2, 6))
+offset_B = ((3, 4), (3, 5))
+offset_C = ((3, 1), (3, 2))
+offset_D = ((1, 0), (2, 0))
+offset_E = ((0, 1), (0, 2))
+offset_F = ((0, 4), (0, 5))
+offset_G = ((1, 3), (2, 3))
 
 # 表示する数字／記号のon/off情報
 # セグメントAからGについて7種類、「タプル」で用意する。
@@ -80,14 +80,15 @@ def print_style(num=3):
 print("\n")
 print("all numbers")
 for num in range(16):
-   print_style(num=num)
-   print("\n")
+    print_style(num=num)
+    print("\n")
 
 
 BLOCK_TYPE_ON = 41
 BLOCK_DATA_ON = 0
 BLOCK_TYPE_OFF = 0
 BLOCK_DATA_OFF = 0
+
 
 def update_7seg_MCPI(col=0, num=3):  # ある桁をある数字にする関数
     # numをMCPIでcol桁目にブロック表示
