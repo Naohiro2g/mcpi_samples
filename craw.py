@@ -102,8 +102,9 @@ if __name__ == "__main__":
 
     mc.postToChat("Crane - UFO catcher")
 
-    # mc.setBlocks(-50, 0, -50,   50, 40, 50,  0)
-    mc.setBlocks(-50, 70, -50,   50, 120, 50,  0)
+    # for Java Edition
+    # mc.setBlocks(-50, 70, -50,   50, 120, 50,  0)
+    mc.setBlocks(-50, 0, -50,   50, 40, 50,  0)
 
     crane1.move(pause=1)
 
